@@ -13,16 +13,20 @@ export class AppComponent {
   includeSymbols = false;
   password = '';
 
-  onChangeLength(event: any) {
-    const parsedValue = parseInt(event.target.value);
 
-    if (!isNaN(parsedValue)) {
+//Listening to user input
+  onChangeLength(event: Event):number {
+    let userInput = (event.target as HTMLInputElement).value;
+    const parsedValue = parseInt(userInput);
+    if(!isNaN(parsedValue)){
       this.length = parsedValue;
     }
+    return parsedValue;
   }
 
+//Listening to state change of checkboxes
   onChangeUseLetters() {
-    this.includeLetters = !this.includeLetters;
+    this.includeLetters = !this.includeLetters; 
   }
 
   onChangeUseNumbers() {
@@ -58,6 +62,6 @@ export class AppComponent {
     }
 
     this.password = generatedPassword;
-
+    console.log(this.includeLetters);
   }
 }
