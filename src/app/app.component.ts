@@ -16,7 +16,7 @@ export class AppComponent {
 
 //Listening to user input
   onChangeLength(event: Event):number {
-    let userInput = (event.target as HTMLInputElement).value;
+    const userInput = (event.target as HTMLInputElement).value;
     const parsedValue = parseInt(userInput);
     if(!isNaN(parsedValue)){
       this.length = parsedValue;
