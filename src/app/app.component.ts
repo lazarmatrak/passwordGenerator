@@ -14,6 +14,9 @@ export class AppComponent {
   password = '';
 
 
+// EVENT HANDLERS
+
+
 //Listening to user input
   onChangeLength(event: Event):number {
     const userInput = (event.target as HTMLInputElement).value;
